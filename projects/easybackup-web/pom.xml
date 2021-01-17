@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.easyproject</groupId>
+	<artifactId>easybackup-web</artifactId>
+	<packaging>war</packaging>
+	<version>1.2.0-RELEASE</version>
+
+	<name>easybackup-web</name>
+	<url>http://easyproject.cn/easybackup</url>
+
+	<description>
+The web management systemt for EasyBckup.
+A free, open source, cross-platform content backup, content compression,  remote sending task scheduling application integration framework and engine based on Java.
+</description>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/ushelp/EasyBackup.git</url>
+		<connection>scm:git:ssh://github.com/ushelp/EasyBackup.git</connection>
+		<tag>easybackup</tag>
+	</scm>
+	<developers>
+		<developer>
+			<name>Ray Yam</name>
+			<email>inthinkcolor@gmail.com</email>
+			<url>http://easyproject.cn</url>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<easybackup.version>3.3.2-RELEASE</easybackup.version>
+		<easybackup-mysql-plugin.version>3.2.0-RELEASE</easybackup-mysql-plugin.version>
+		<easycommons-properties>2.0.0-RELEASE</easycommons-properties>
+		<spring.version>4.3.1.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<servletapi.version>2.5</servletapi.version>
+		<javaeeapi.version>7.0</javaeeapi.version>
+		<jstl.version>1.2</jstl.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>cn.easyproject</groupId>
+			<artifactId>easycommons-properties</artifactId>
+			<version>${easycommons-properties}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.easyproject</groupId>
+			<artifactId>easybackup-mysql-plugin</artifactId>
+			<version>${easybackup-mysql-plugin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>cn.easyproject</groupId>
+			<artifactId>easybackup</artifactId>
+			<version>${easybackup.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.easyproject</groupId>
+			<artifactId>easybackup-mysql-plugin</artifactId>
+			<version>${easybackup-mysql-plugin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servletapi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${javaeeapi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>easybackup-web</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.3.10.v20160621</version>
+				<configuration>
+					<httpConnector>
+						<port>8089</port>
+					</httpConnector>
+					<!-- 停止jetty的配置 -->
+					<stopPort>9966</stopPort>
+					<stopKey>shutdown</stopKey>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

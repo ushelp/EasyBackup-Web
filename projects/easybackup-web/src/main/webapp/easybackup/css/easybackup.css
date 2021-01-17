@@ -1,0 +1,201 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 30px;
+	line-height: 30px;
+	background-color: #f5f5f5;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+.container {
+	width: auto;
+	max-width: 680px;
+	padding: 0 15px;
+}
+
+.container .text-muted {
+	text-align: center;
+}
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+	padding-top: 30px;
+}
+
+/*
+ * Global add-ons
+ */
+.sub-header {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+	border: 0;
+	
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+	display: none;
+}
+.navRight {
+	display: none;
+}
+
+
+@media ( min-width : 768px) {
+	.sidebar {
+		position: fixed;
+		top: 60px;
+		bottom: 0px;
+		left: 0;
+		z-index: 1000;
+		display: block;
+		padding: 20px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		/* Scrollable contents if viewport is shorter than content. */
+		background-color: #f5f5f5;
+		border-right: 1px solid #eee;
+	}
+	.navRight{display: block;}	
+}
+
+
+
+/* Sidebar navigation */
+.nav-sidebar {
+	margin-right: -21px; /* 20px padding + 1px border */
+	margin-bottom: 20px;
+	margin-left: -20px;
+}
+
+.nav-sidebar>li>a {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.nav-sidebar>.active>a, .nav-sidebar>.active>a:hover, .nav-sidebar>.active>a:focus
+	{
+	color: #fff;
+	background-color: #428bca;
+}
+
+/*
+ * Main content
+ */
+.main {
+	padding: 20px;
+}
+
+@media ( min-width : 768px) {
+	.main {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+}
+
+
+.main .page-header {
+	margin-top: 20px;
+}
+
+/*
+ * Placeholder dashboard ideas
+ */
+.placeholders {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.placeholders h4 {
+	margin-bottom: 0;
+}
+
+.placeholder {
+	margin-bottom: 20px;
+}
+
+.placeholder img {
+	display: inline-block;
+	border-radius: 50%;
+}
+
+.navbar {
+	color: #ffffff;
+	background: #FFCC33;
+	overflow: hidden;
+}
+.navbar-header{line-height: 60px;height: 60px;}
+.navbar-brand {
+	color: #FFFFFF !important;
+	font-size: 32px;
+	line-height: 30px;
+}
+
+#all {
+	width: 150px;
+	height: 100px;
+	background-color: #6699FF;
+	color: #ffffff;
+	font-size: 40px;
+	line-height: 100px;
+	font-weight: bold; 
+}
+
+#running {
+	width: 150px;
+	height: 100px;
+	background-color: #00CC33;
+	color: #ffffff;
+	font-size: 40px;
+	line-height: 100px;
+	font-weight: bold;
+}
+#error {
+	width: 150px;
+	height: 100px;
+	background-color: #FF3300;
+	color: #ffffff;
+	font-size: 40px;
+	line-height: 100px;
+	font-weight: bold;
+}
+#enable {
+	width: 150px;
+	height: 100px;
+	background-color: #33CC66;
+	color: #ffffff;
+	font-size: 40px;
+	line-height: 100px;
+	font-weight: bold;
+}
